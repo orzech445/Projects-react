@@ -1,5 +1,11 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(134, 151, 142);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +16,37 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card {
+  border: 1px solid black;
+  margin: 1rem 4rem;
+  padding: .5rem 1rem;
+  position: relative;
+}
+
+.card.completed {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.completedBtn {
+  background-color: rgb(58, 84, 70);
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: .3rem .5rem;
+}
+
+.removeBtn {
+  background-color: inherit;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

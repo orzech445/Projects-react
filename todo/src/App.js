@@ -1,6 +1,7 @@
+import Todo from "./Components/Todo";
 
 function App() {
-  return <div>coc</div>
+  return (<Todo />)
 }
 
 export default App;
