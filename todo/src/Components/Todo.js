@@ -19,20 +19,22 @@ class Todo extends React.Component {
         this.setState({elements: newElements})
     }
 
-    removeCard(itemToBeDeleted) {
-        const newElements = this.state.elements.filter(item => item.id !== itemToBeDeleted)
+    removeCard(id) {
+        const newElements = this.state.elements.filter(item => item.id !== id)
 
         this.setState({elements: newElements})
     }
 
     addItem() {
-        const item = {
-            id: Math.random(),
-            title: this.state.inputValue
-        }
+        if (this.state.inputValue) {
+            const item = {
+                id: this.state.elements.length + 1,
+                title: this.state.inputValue
+            }
 
-        const newElements = [item, ...this.state.elements]
-        this.setState({elements: newElements})
+            const newElements = [item, ...this.state.elements]
+            this.setState({elements: newElements})
+        }
     }
 
     inputHandler(event) {
@@ -44,15 +46,16 @@ class Todo extends React.Component {
         const tab = this.state.elements.map(e => {
             return (
                 <TodoItem element={e}
-                markClicked={this.markCompleted.bind(this)}
-                removeClicked={this.removeCard.bind(this)}/>
+                markCompleted={this.markCompleted.bind(this)}
+                removeCard={this.removeCard.bind(this)}
+                />
             )
         })
         return (
-            <div>
-                Todo App
+            <div className='todo-container'>
+                <h1>Todo App</h1>
                 <input type="text" value={this.state.inputValue} onChange={this.inputHandler.bind(this)} />
-                <button onClick={this.addItem.bind(this)}>Add Event</button>
+                <button className='addTask' onClick={this.addItem.bind(this)}>Add Task</button>
                 {tab}
             </div>
         )
