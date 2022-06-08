@@ -1,5 +1,11 @@
-body {
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
+}
+
+body {
+  background-color: rgb(69, 61, 61);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +16,26 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.square {
+  background-color: #fff;
+  width: 200px;
+  height: 200px;
+}
+
+.red .square {
+  background-color: rgb(160, 37, 37);
+}
+
+.green .square {
+  background-color: rgb(22, 84, 22);
+}
+
+.blue .square {
+  background-color: rgb(22, 22, 133);
+}
+
+.squares {
+  display: flex;
 }
