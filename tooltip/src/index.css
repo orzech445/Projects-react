@@ -22,24 +22,40 @@ code {
     monospace;
 }
 
-.square {
+.box {
   background-color: #fff;
   width: 200px;
   height: 200px;
 }
 
-.red .square {
+.red .box {
   background-color: rgb(160, 37, 37);
 }
 
-.green .square {
+.green .box {
   background-color: rgb(22, 84, 22);
 }
 
-.blue .square {
+.blue .box {
   background-color: rgb(22, 22, 133);
 }
 
-.squares {
+.boxes {
   display: flex;
+}
+
+.boxes div {
+  position: relative;
+  margin: 1.5rem;
+}
+
+.tooltip {
+  background-color: #fff;
+  width: 200px;
+  position: absolute;
+  top: -70px;
+  right: -20px;
+  text-align: center;
+  border-radius: 15px;
+  padding: 0.5rem;
 }

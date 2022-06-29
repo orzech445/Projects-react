@@ -5,15 +5,26 @@ import TooltipItemBlue from "./TooltipItemBlue";
 import TooltipItemYellow from "./TooltipItemYellow";
 
 class Tooltip extends React.Component {
+    showTooltip() {
+        console.log("showTooltip")
+
+        const spanEl = document.createElement("span")
+        spanEl.className = "tooltip"
+        document.body.appendChild(spanEl)
+    }
+
     render() {
-        const squareItem = <TooltipItem />
+        const boxItem = <
+            TooltipItem 
+            showTooltip={this.showTooltip.bind(this)}
+            />
         
         return (
         <div>
-            <div className="squares">
-                <div className="red">{squareItem}</div>
-                <div className="green">{squareItem}</div>
-                <div className="blue">{squareItem}</div>
+            <div className="boxes">
+                <div className="red">{boxItem}</div>
+                <div className="green">{boxItem}</div>
+                <div className="blue">{boxItem}</div>
             </div>
         </div>
         )
